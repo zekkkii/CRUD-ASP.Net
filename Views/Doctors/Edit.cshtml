@@ -1,0 +1,36 @@
+﻿@model Doctor
+
+<div class="card">
+    <div class="card-body">
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="@Model.Id">
+            <div class="form-group">
+                <label asp-for="Nombre">Nombre</label>
+                <input type="text" asp-for="Nombre" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono">Telefono</label>
+                <input type="text" asp-for="Telefono" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo">Correo</label>
+                <input type="email" asp-for="Correo" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento">Fecha Nacimiento</label>
+                <input type="date" asp-for="FechaNacimiento" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoPostal">CodigoPostal</label>
+                <input type="text" asp-for="CodigoPostal" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfilePhoto">Profile Photo</label>
+                <input type="file" asp-for="ProfilePhoto" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>

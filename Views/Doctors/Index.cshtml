@@ -1,0 +1,44 @@
+﻿@model List<Doctor>
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <a asp-action="Create" class="btn btn-success m-3">Create a Doctor</a>
+    <div class="text-center">
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">correo</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Codigo Postal</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Doctor doctor in Model)
+                {
+                <tr>
+                    <th scope="row">@doctor.Id</th>
+                    <td>@doctor.Telefono</td>
+                    <td>@doctor.Nombre</td>
+                    <td>@doctor.Correo</td>
+                    <td>@doctor.FechaNacimiento</td>
+                    <td>@doctor.CodigoPostal</td>
+                    <td><a class="btn btn-lg btn-primary" asp-action="Edit" asp-route-id="@doctor.Id">Editar</a></td>
+                    <td>
+                       
+                        <a class="btn btn-lg btn-danger" asp-action="Delete" asp-route-id="@doctor.Id">Eliminar</a>
+                    </td>
+                </tr>
+
+                }
+
+            </tbody>
+        </table>
+
+    </div>
